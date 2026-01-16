@@ -10,7 +10,46 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="https://www.tradedly.com/search.html" rel="canonical"/><meta content="Need Search? Compare free quotes from vetted local providers. Tradedly makes it fast and easy." name="description"/></head>
-<body>
+<body><section class="hero">
+<div class="container">
+<h1>Connecting You with Trusted Local Services</h1>
+<p>Tradedly matches you with up to three vetted providers for rubbish removal, skip hire, drainage, pest control and more across the UK. Get quotes quickly and easily.</p>
+<a class="btn btn-warning btn-lg" href="#quote">Get My Free Quote</a>
+</div>
+</section><section id="quote">
+<h2>Request Your Free Quote</h2>
+<div class="quote-card">
+<p class="text-center fw-semibold">Trusted by thousands of homeowners across the UK</p>
+<form id="quoteForm" novalidate="">
+<div class="mb-3">
+<label class="form-label" for="service">Service</label>
+<select class="form-select" id="service" name="service" required="">
+<option disabled="" selected="" value="">Choose a service…</option>
+<option value="rubbish-removal">Rubbish Removal</option>
+<option value="skip-hire">Skip Hire</option>
+<option value="drainage">Drainage &amp; Blocked Drains</option>
+<option value="pest-control">Pest Control</option>
+<option value="home-cleaning">Home Cleaning</option>
+<option value="garden-landscaping">Garden &amp; Landscaping</option>
+</select>
+</div>
+<div class="mb-3">
+<label class="form-label" for="postcode">Postcode or City</label>
+<input class="form-control" id="postcode" name="postcode" placeholder="e.g. EN5" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="phone">Phone (optional)</label>
+<input class="form-control" id="phone" inputmode="numeric" name="phone" pattern="[0-9 ]+" placeholder="e.g. 07123 456 789" type="tel"/>
+<small>We only use this for account security. No spam.</small>
+</div>
+<button class="btn btn-primary" type="submit">Get My Free Quote</button>
+</form>
+<div class="trust-note">
+<span>✓ SSL Secure   |  </span>
+<a href="/privacy-policy">Privacy Policy</a>
+</div>
+</div>
+</section>
 <section class="search-section">
 <h2>Search Our Services</h2>
 <input id="search-input" placeholder="Type service or city..." type="text"/>

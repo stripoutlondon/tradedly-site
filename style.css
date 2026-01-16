@@ -778,3 +778,47 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+
+/* Custom overrides for unified colours and lists */
+.card-icon i,
+.city-services i,
+.city-services a {
+  color: #FFC107 !important;
+}
+.card-icon i {
+  font-size: 2.5rem;
+}
+.city-services ul,
+.city-links ul,
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.city-services a {
+  text-decoration: none;
+}
+.city-services a:hover {
+  text-decoration: underline;
+}
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+footer ul li a {
+  color: #333;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+.hero a.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+.top-services ul {
+  list-style: none;
+  padding-left: 0;
+}
