@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/*
+ * Tradedly full site styles
+ *
+ * This file extends the base design with service-specific hero
+ * backgrounds and blog layouts.  Colours are customisable per service.
+ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background: #f5f7fa;
+  line-height: 1.5;
+}
+
+/* Header and navigation */
+header {
+  background: linear-gradient(135deg, #4b79a1 0%, #283e51 100%);
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* Highlight Blog link */
+nav a[href="blog.html"] {
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+}
+
+/* Hero section */
+/*
+ * Base hero styles
+ * The hero on the home page uses a subtle gradient to give more depth
+ * to the top section of the site. Individual service pages override
+ * the background via their service‑specific classes (see below).
+ */
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 100px;
+  /* default gradient for home page */
+  background: linear-gradient(135deg, #4b79a1 0%, #283e51 100%);
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 20px auto 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  /* Warm golden tone for better contrast against the hero section */
+  background: #f39c12;
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #d68910;
+}
+
+/* Service cards grid */
+.services-section {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.service-card p {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.service-card a {
+  margin-top: 12px;
+  text-decoration: none;
+  color: #4b79a1;
+  font-weight: bold;
+}
+
+.service-card a:hover {
+  text-decoration: underline;
+}
+
+/* How it works section */
+.how-section {
+  background: #ffffff;
+  padding: 40px;
+  border-top: 2px solid #f0f2f5;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  padding: 20px;
+}
+
+.step-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #283e51;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.step-desc {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #555;
+}
+
+/* Generic section title */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #283e51;
+}
+
+/* Form styles */
+.form-section {
+  background: #ffffff;
+  padding: 40px;
+  max-width: 700px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h3 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+}
+
+.form-group input[type="submit"] {
+  background: #4b79a1;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+  background: #3a607f;
+}
+
+/* Footer */
+footer {
+  background: #283e51;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Blog section */
+.blog-section {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card h4 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.blog-card p {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+.blog-card a {
+  color: #4b79a1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
+}
+
+/* Service-specific hero backgrounds */
+.hero.rubbish-removal {
+  background: linear-gradient(135deg, #4b79a1 0%, #283e51 100%);
+}
+
+.hero.skip-hire {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+.hero.drainage {
+  background: linear-gradient(135deg, #16a085 0%, #3ab795 100%);
+}
+
+.hero.pest-control {
+  background: linear-gradient(135deg, #e74c3c 0%, #e67e22 100%);
+}
+
+.hero.commercial-clearance {
+  background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+}
+
+.hero.asbestos-removal {
+  background: linear-gradient(135deg, #d35400 0%, #f39c12 100%);
+}
+
+.hero.plumbing-emergency {
+  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+}
+
+.hero.demolition-small {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+}
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4b79a1;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-button:hover {
+  background: #3a607f;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Content sections for standalone pages like Privacy Policy and Terms */
+.content-section {
+  background: #ffffff;
+  padding: 40px;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials section */
+.testimonials-section {
+  background: #f5f7fa;
+  padding: 40px;
+  border-top: 2px solid #f0f2f5;
+}
+.testimonial {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.testimonial cite {
+  font-weight: 600;
+  color: #283e51;
+}
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+.trust-badges img {
+  height: 50px;
+  opacity: 0.8;
+}
+
+
+/* Sticky quote widget */
+.sticky-quote {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 260px;
+  z-index: 999;
+}
+
+.sticky-quote h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.sticky-quote .form-group {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .sticky-quote {
+    position: static;
+    max-width: 100%;
+    margin: 20px;
+  }
+}
+
+
+.hero.home-cleaning {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+
+.hero.garden-landscaping {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+
+.hero.roofing-repairs {
+  background: linear-gradient(135deg, #485563 0%, #29323c 100%);
+}
+
+
+.hero.painting-decorating {
+  background: linear-gradient(135deg, #f4c4f3 0%, #fc67fa 100%);
+}
+
+
+.hero.handyman-services {
+  background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
+}
+
+
+.hero.window-cleaning {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+/* Hero gradient for Carpet Cleaning */
+.hero.carpet-cleaning {
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  color: #fff;
+}
+
+/* Hero gradient for Tree Surgery & Arborist */
+.hero.tree-surgery {
+  background: linear-gradient(135deg, #8bc34a 0%, #388e3c 100%);
+  color: #fff;
+}
+
+
+/* Icon styling for service cards */
+/*
+ * Icons inside service cards have a warm accent colour inspired by the
+ * original yellow icons used on earlier designs. This helps draw
+ * attention to each card and improves visual contrast against the
+ * white card background.
+ */
+.service-card .service-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #f39c12;
+}
+
+/* Hover effect on service cards */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Trust section styling */
+.trust-section {
+  padding: 2rem 1rem;
+  background: #f7f7f7;
+  text-align: center;
+}
+.trust-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 200px;
+}
+.trust-item i {
+  font-size: 2.5rem;
+  /* Use the same golden accent for trust icons to match service icons */
+  color: #28a745;
+}
+
+/* FAQ styling */
+.faq-section {
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+}
+.faq-item {
+  margin-bottom: 1rem;
+}
+.faq-item h4 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.faq-item p {
+  margin: 0;
+  color: #555;
+}
+
+/* Force hero heading text to white to avoid colour clash */
+.hero h1, .hero h2 { color: #ffffff !important; }
+
+
+/* Step icons for the How It Works section */
+.step-icon {
+  /* Increase the icon size to make it more visually prominent */
+  font-size: 40px;
+  /* Use a green accent colour to convey trust and match the updated design */
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the brand link in the header.  Inherit the parent colour but remove
+   underlines and enlarge the text slightly for better prominence. */
+header h1 a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Section listing other services available in the current city.  Styled
+   similarly to the city-links section but with distinct class names to
+   allow independent tweaking. */
+.city-services {
+  padding: 1rem;
+  background: #f9f9f9;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+.city-services h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.city-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.city-services li {
+  margin-right: 0.75rem;
+}
+
+.city-services li a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.city-services li a:hover {
+  text-decoration: underline;
+}
+
+/* SEO content styling */
+.seo-content {
+  padding: 1rem;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+}
+.seo-content h2 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  color: #283e51;
+}
+.seo-content p {
+  margin-bottom: 0.7rem;
+}
+
+/* City links section */
+.city-links {
+  padding: 1rem;
+  background: #f7f7f7;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1rem;
+}
+.city-links h3 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  color: #283e51;
+}
+.city-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.city-links li {
+  margin: 0;
+}
+.city-links li a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.city-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Search page styling */
+.search-section {
+  padding: 2rem 1rem;
+}
+#search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+#search-results ul {
+  list-style: none;
+  padding: 0;
+}
+#search-results li {
+  margin-bottom: 0.5rem;
+}
+#search-results a {
+  color: #0066cc;
+  text-decoration: none;
+}
+#search-results a:hover {
+  text-decoration: underline;
+}
+
+/* Footer enhancements */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  background: #f7f7f7;
+  border-top: 1px solid #e0e0e0;
+}
+.footer-about h4,
+.footer-links h4 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  color: #283e51;
+}
+.footer-about p,
+.footer-links ul {
+  font-size: 14px;
+  color: #555;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 0.3rem;
+}
+.footer-links a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
