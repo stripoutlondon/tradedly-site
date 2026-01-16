@@ -746,3 +746,35 @@ header h1 a {
 .footer-links a:hover {
   text-decoration: underline;
 }
+
+
+/* Added overrides for icon colours and list formatting */
+.card-icon i,
+.city-services a i,
+.card-icon .fa {
+  color: #FFC107 !important;
+}
+.city-services a {
+  color: #FFC107 !important;
+  text-decoration: none;
+}
+.city-services ul,
+.city-links ul,
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.city-services li,
+.city-links li,
+footer ul li {
+  margin-bottom: 0.25rem;
+}
+/* remove bullet points and style links in footers */
+footer a {
+  text-decoration: none;
+  color: #007bff;
+}
+footer a:hover {
+  text-decoration: underline;
+}
