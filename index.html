@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tradedly | Trusted Local Services</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tradedly | Trusted Local Services</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -60,126 +61,120 @@
       text-align: center;
     }
   </style>
-</head>
+<meta content="Need Tradedly? Compare free quotes from vetted local providers. Tradedly makes it fast and easy." name="description"/></head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Tradedly</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <div class="container">
-      <h1>Connecting You with Trusted Local Services</h1>
-      <p>Tradedly matches you with up to three vetted providers for rubbish removal, skip hire, drainage, pest control and more across the UK. Get quotes quickly and easily.</p>
-      <a href="#quote" class="btn btn-warning btn-lg">Get My Free Quote</a>
-    </div>
-  </section>
-
-  <section id="quote">
-    <h2>Request Your Free Quote</h2>
-    <div class="quote-card">
-      <p class="text-center fw-semibold">Trusted by thousands of homeowners across the UK</p>
-      <form id="quoteForm" novalidate>
-        <div class="mb-3">
-          <label for="service" class="form-label">Service</label>
-          <select id="service" name="service" class="form-select" required>
-            <option value="" selected disabled>Choose a service…</option>
-            <option value="rubbish-removal">Rubbish Removal</option>
-            <option value="skip-hire">Skip Hire</option>
-            <option value="drainage">Drainage &amp; Blocked Drains</option>
-            <option value="pest-control">Pest Control</option>
-            <option value="home-cleaning">Home Cleaning</option>
-            <option value="garden-landscaping">Garden &amp; Landscaping</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="postcode" class="form-label">Postcode or City</label>
-          <input id="postcode" name="postcode" type="text" class="form-control" placeholder="e.g. EN5" required>
-        </div>
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone (optional)</label>
-          <input id="phone" name="phone" type="tel" class="form-control" placeholder="e.g. 07123 456 789" inputmode="numeric" pattern="[0-9 ]+">
-          <small>We only use this for account security. No spam.</small>
-        </div>
-        <button type="submit" class="btn btn-primary">Get My Free Quote</button>
-      </form>
-      <div class="trust-note">
-        <span>✓ SSL Secure &nbsp; | &nbsp;</span>
-        <a href="/privacy-policy">Privacy Policy</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Placeholder for more content (Services, How It Works, Testimonials, etc.) -->
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Our Services</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Rubbish Removal</h5>
-            <p class="card-text">Fast, affordable waste collection and disposal for homes and businesses. We handle general waste, bulky items and more.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Home Cleaning</h5>
-            <p class="card-text">Comprehensive cleaning services for homes and offices. Regular and deep cleaning tasks handled by professionals.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Garden &amp; Landscaping</h5>
-            <p class="card-text">Expert lawn care, planting and landscape design to create beautiful outdoor spaces.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Why Choose Tradedly?</h2>
-    <div class="row text-center">
-      <div class="col-md-4">
-        <h3>✓ Vetted Providers</h3>
-        <p>All providers are checked and verified to ensure top quality and reliability.</p>
-      </div>
-      <div class="col-md-4">
-        <h3>✓ Trusted by Thousands</h3>
-        <p>Join the many satisfied customers who have found great services through Tradedly.</p>
-      </div>
-      <div class="col-md-4">
-        <h3>✓ Fast Response</h3>
-        <p>Receive responses from multiple providers quickly so you can compare and choose.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-light py-4">
-    <div class="container text-center">
-      <p>© 2026 Tradedly. All rights reserved. <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS (for collapse and other components) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Inline Validation script -->
-  <script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+<a class="navbar-brand" href="#">Tradedly</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div class="container">
+<h1>Connecting You with Trusted Local Services</h1>
+<p>Tradedly matches you with up to three vetted providers for rubbish removal, skip hire, drainage, pest control and more across the UK. Get quotes quickly and easily.</p>
+<a class="btn btn-warning btn-lg" href="#quote">Get My Free Quote</a>
+</div>
+</section>
+<section id="quote">
+<h2>Request Your Free Quote</h2>
+<div class="quote-card">
+<p class="text-center fw-semibold">Trusted by thousands of homeowners across the UK</p>
+<form id="quoteForm" novalidate="">
+<div class="mb-3">
+<label class="form-label" for="service">Service</label>
+<select class="form-select" id="service" name="service" required="">
+<option disabled="" selected="" value="">Choose a service…</option>
+<option value="rubbish-removal">Rubbish Removal</option>
+<option value="skip-hire">Skip Hire</option>
+<option value="drainage">Drainage &amp; Blocked Drains</option>
+<option value="pest-control">Pest Control</option>
+<option value="home-cleaning">Home Cleaning</option>
+<option value="garden-landscaping">Garden &amp; Landscaping</option>
+</select>
+</div>
+<div class="mb-3">
+<label class="form-label" for="postcode">Postcode or City</label>
+<input class="form-control" id="postcode" name="postcode" placeholder="e.g. EN5" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="phone">Phone (optional)</label>
+<input class="form-control" id="phone" inputmode="numeric" name="phone" pattern="[0-9 ]+" placeholder="e.g. 07123 456 789" type="tel"/>
+<small>We only use this for account security. No spam.</small>
+</div>
+<button class="btn btn-primary" type="submit">Get My Free Quote</button>
+</form>
+<div class="trust-note">
+<span>✓ SSL Secure   |  </span>
+<a href="/privacy-policy">Privacy Policy</a>
+</div>
+</div>
+</section>
+<!-- Placeholder for more content (Services, How It Works, Testimonials, etc.) -->
+<section class="container my-5">
+<h2 class="text-center mb-4">Our Services</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="col">
+<div class="card h-100">
+<div class="card-body">
+<h5 class="card-title">Rubbish Removal</h5>
+<p class="card-text">Fast, affordable waste collection and disposal for homes and businesses. We handle general waste, bulky items and more.</p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100">
+<div class="card-body">
+<h5 class="card-title">Home Cleaning</h5>
+<p class="card-text">Comprehensive cleaning services for homes and offices. Regular and deep cleaning tasks handled by professionals.</p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100">
+<div class="card-body">
+<h5 class="card-title">Garden &amp; Landscaping</h5>
+<p class="card-text">Expert lawn care, planting and landscape design to create beautiful outdoor spaces.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container my-5">
+<h2 class="text-center mb-4">Why Choose Tradedly?</h2>
+<div class="row text-center">
+<div class="col-md-4">
+<h3>✓ Vetted Providers</h3>
+<p>All providers are checked and verified to ensure top quality and reliability.</p>
+</div>
+<div class="col-md-4">
+<h3>✓ Trusted by Thousands</h3>
+<p>Join the many satisfied customers who have found great services through Tradedly.</p>
+</div>
+<div class="col-md-4">
+<h3>✓ Fast Response</h3>
+<p>Receive responses from multiple providers quickly so you can compare and choose.</p>
+</div>
+</div>
+</section>
+<footer class="bg-light py-4">
+<div class="container text-center">
+<p>© 2026 Tradedly. All rights reserved. <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+</div>
+</footer>
+<!-- Bootstrap JS (for collapse and other components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Inline Validation script -->
+<script>
     (function() {
       const form = document.getElementById('quoteForm');
       form.addEventListener('submit', function(e) {
@@ -191,5 +186,5 @@
       });
     })();
   </script>
-</body>
+<script src="/tracking.js"></script></body>
 </html>
