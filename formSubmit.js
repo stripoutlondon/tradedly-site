@@ -27,11 +27,45 @@ document.addEventListener('DOMContentLoaded', function () {
    * @param {Object} data
    * @returns {Promise<Response>}
    */
+  /**
+   * Map simple form field names to the names required by the Zapier
+   * automation. See the comments in formHandler.js for details on
+   * why this is necessary. If you are using Google Apps Script or a
+   * different endpoint, you can adjust this mapping accordingly or
+   * remove it altogether.
+   *
+   * @param {Object} data
+   * @returns {Object}
+   */
+  function transformForZapier(data) {
+    const mapped = { ...data };
+    if (data.name && !data['Data Contact Name First']) {
+      mapped['Data Contact Name First'] = data.name;
+    }
+    if (data.email && !data['Data Contact Email']) {
+      mapped['Data Contact Email'] = data.email;
+    }
+    if (data.phone && !data['Data Contact Phone']) {
+      mapped['Data Contact Phone'] = data.phone;
+    }
+    const postcodeValue = data.postcode || data.city || data.postcode_city;
+    if (postcodeValue && !data['Data Field Address Eeed']) {
+      mapped['Data Field Address Eeed'] = postcodeValue;
+    }
+    if (data.service && !data['Data Field Select A Service']) {
+      mapped['Data Field Select A Service'] = data.service;
+    }
+    if (data.date_needed && !data['Data Field When Do You Need It Removed?']) {
+      mapped['Data Field When Do You Need It Removed?'] = data.date_needed;
+    }
+    return mapped;
+  }
+
   function postData(data) {
-    // Updated endpoint to use the active Zapier webhook. If you prefer to use a
-    // Google Apps Script instead of Zapier, replace this URL with your Apps
-    // Script web app URL. Otherwise, keep it in sync with formHandler.js.
-    const endpointUrl = 'https://hooks.zapier.com/hooks/catch/18199278/uw5lr6u/';
+    // Active Zapier webhook catch hook (u2joewm). Keep this in sync with
+    // formHandler.js to ensure data is sent to the correct Zap. If you
+    // switch to a Google Apps Script or another endpoint, update this URL.
+    const endpointUrl = 'https://hooks.zapier.com/hooks/catch/18199278/u2joewm/';
     return fetch(endpointUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -47,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const data = serialiseForm(form);
-      postData(data)
+      const payload = transformForZapier(data);
+      postData(payload)
         .then(() => {
           // Display a friendly success message
           alert('Thank you! We have received your request and will be in touch soon.');

@@ -19,16 +19,56 @@ document.addEventListener('DOMContentLoaded', function () {
     return data;
   }
 
-  // Post the data to Zapier (placeholder URL)
+  /**
+   * Transform generic form field names into the names expected by the Zapier
+   * automation. The quote forms on this site use simple names such as
+   * "name", "email", "phone", "postcode", "service" and
+   * "date_needed". However, the Zap that records leads into the Google
+   * Sheet expects fields with longer labels like "Data Contact Name First"
+   * and "Data Field When Do You Need It Removed?". This helper maps our
+   * simple keys onto the Zap's expected keys. Keys that are already in
+   * Zapier's format are left untouched, so the function is idempotent.
+   *
+   * @param {Object} data A plain object containing form data
+   * @returns {Object} A new object with the original keys plus the mapped keys
+   */
+  function transformForZapier(data) {
+    const mapped = { ...data };
+    // Map contact name
+    if (data.name && !data['Data Contact Name First']) {
+      mapped['Data Contact Name First'] = data.name;
+    }
+    // Map email address
+    if (data.email && !data['Data Contact Email']) {
+      mapped['Data Contact Email'] = data.email;
+    }
+    // Map phone number (optional)
+    if (data.phone && !data['Data Contact Phone']) {
+      mapped['Data Contact Phone'] = data.phone;
+    }
+    // Map postcode/city to the address field used in the Zap
+    const postcodeValue = data.postcode || data.city || data.postcode_city;
+    if (postcodeValue && !data['Data Field Address Eeed']) {
+      mapped['Data Field Address Eeed'] = postcodeValue;
+    }
+    // Map selected service
+    if (data.service && !data['Data Field Select A Service']) {
+      mapped['Data Field Select A Service'] = data.service;
+    }
+    // Map date needed (the date picker) to the corresponding question
+    if (data.date_needed && !data['Data Field When Do You Need It Removed?']) {
+      mapped['Data Field When Do You Need It Removed?'] = data.date_needed;
+    }
+    return mapped;
+  }
+
+  // Post the data to Zapier
   function postToZapier(data) {
-    // Send form submissions to the configured Zapier catch hook.  This URL
-    // was provided by the user and should not be modified without updating
-    // the Zapier integration. See README or docs for details.
-    // Updated Zapier webhook URL. This should point to the active catch hook for
-    // your "Tradedly.com – Website Form Completed" Zap. If you change the Zap
-    // or create a new one, update this value accordingly. See Google Drive
-    // document titled "Untitled document" (Jan 3 2026) for reference links.
-    const url = 'https://hooks.zapier.com/hooks/catch/18199278/uw5lr6u/';
+    // Replace the placeholder URL with the active Zapier catch hook for your
+    // "Tradedly.com – Website Form Completed" Zap. This should match the
+    // catch hook shown in Zapier (u2joewm as of Jan 2026). If you create a
+    // new Zap or update the existing one, update this URL accordingly.
+    const url = 'https://hooks.zapier.com/hooks/catch/18199278/u2joewm/';
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -44,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const data = serialiseForm(form);
-      postToZapier(data)
+      // Map our generic field names to those expected by the Zap
+      const payload = transformForZapier(data);
+      postToZapier(payload)
         .then(() => {
           alert('Thanks! We will be in touch shortly.');
           form.reset();
@@ -60,7 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const data = serialiseForm(form);
-      postToZapier(data)
+      // Transform field names before submitting to Zapier
+      const payload = transformForZapier(data);
+      postToZapier(payload)
         .then(() => {
           alert('Thank you! Your enquiry has been received.');
           form.reset();
