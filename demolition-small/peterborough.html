@@ -52,7 +52,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 <h2>Request Your Free Quote</h2>
 <div class="quote-card">
 <p class="text-center fw-semibold">Trusted by thousands of homeowners across the UK</p>
-<form id="quoteForm" novalidate="">
+<form id="quoteForm" class="quote-form" novalidate="">
 <div class="mb-3">
 <label class="form-label" for="service">Service</label>
 <select class="form-select" id="service" name="service" required="">
@@ -73,6 +73,18 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 <label class="form-label" for="phone">Phone (optional)</label>
 <input class="form-control" id="phone" inputmode="numeric" name="phone" pattern="[0-9 ]+" placeholder="e.g. 07123 456 789" type="tel"/>
 <small>We only use this for account security. No spam.</small>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="name">Name</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="email">Email</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="date_needed">When do you need this service?</label>
+    <input type="date" id="date_needed" name="date_needed" class="form-control" required>
 </div>
 <button class="btn btn-primary" type="submit">Get My Free Quote</button>
 </form>

@@ -28,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
    * @returns {Promise<Response>}
    */
   function postData(data) {
-    const endpointUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    // Updated endpoint to use the active Zapier webhook. If you prefer to use a
+    // Google Apps Script instead of Zapier, replace this URL with your Apps
+    // Script web app URL. Otherwise, keep it in sync with formHandler.js.
+    const endpointUrl = 'https://hooks.zapier.com/hooks/catch/18199278/uw5lr6u/';
     return fetch(endpointUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
