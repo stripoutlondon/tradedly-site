@@ -64,10 +64,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Post the data to Zapier
   function postToZapier(data) {
+<<<<<<< HEAD
     // Replace the placeholder URL with the active Zapier catch hook for your
     // "Tradedly.com – Website Form Completed" Zap. This should match the
     // catch hook shown in Zapier (u2joewm as of Jan 2026). If you create a
     // new Zap or update the existing one, update this URL accordingly.
+=======
+    // Send form submissions to the configured Zapier catch hook.  This URL
+    // was provided by the user and should not be modified without updating
+    // the Zapier integration. See README or docs for details.
+    // Updated Zapier webhook URL. This should point to the active catch hook for
+    // your "Tradedly.com – Website Form Completed" Zap. If you change the Zap
+    // or create a new one, update this value accordingly. See Google Drive
+    // document titled "Untitled document" (Jan 3 2026) for reference links.
+>>>>>>> 0f0e89bbcbd37bbf86bbe6b51f4ab201ef0fbda2
     const url = 'https://hooks.zapier.com/hooks/catch/18199278/u2joewm/';
     return fetch(url, {
       method: 'POST',
@@ -76,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       body: JSON.stringify(data),
       mode: 'no-cors',
-    });
+    
   }
 
   // Attach handlers to quick quote forms
