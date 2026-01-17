@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // your "Tradedly.com – Website Form Completed" Zap. If you change the Zap
     // or create a new one, update this value accordingly. See Google Drive
     // document titled "Untitled document" (Jan 3 2026) for reference links.
-    const url = 'https://hooks.zapier.com/hooks/catch/18199278/uw5lr6u/';
+    const url = 'https://hooks.zapier.com/hooks/catch/18199278/u2joewm/';
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       body: JSON.stringify(data),
       mode: 'no-cors',
-    });
+    
   }
 
   // Attach handlers to quick quote forms
